@@ -1,0 +1,77 @@
+/*
+ ============================================================================
+ File        : transmitter.ino
+ Project     : DIY Smart Band using ESP32 + LoRa + Firebase
+ Author      : Sathyanath L
+ College     : Rajalakshmi Engineering College
+ Description :
+    This program runs on the ESP32 transmitter node of the DIY Smart Band.
+
+ Hardware Used:
+    • ESP32 DevKit V1
+    • SX1278 LoRa Module (433MHz)
+    • MAX30105 Heart Rate Sensor
+    • NEO-6M GPS Module
+    • Push Button (SOS)
+    • Li-Po Battery
+
+ Features:
+    ✓ Reads Heart Rate from MAX30105
+    ✓ Reads GPS Coordinates from NEO-6M
+    ✓ Sends sensor data using LoRa
+    ✓ Supports SOS Push Button
+    ✓ Low-power wearable transmitter
+
+ Communication:
+    LoRa Frequency : 433 MHz
+    Data Format :
+        HR:91,
+        Lat:12.971652,
+        Lon:80.220317,
+        Sat:7,
+        Alt:15.4,
+        SOS:0,
+        T:658301
+
+ Pin Connections
+ ----------------------------------------------------------------------------
+ LoRa Module
+ ----------------------------------------------------------------------------
+ SCK    -> GPIO18
+ MISO   -> GPIO19
+ MOSI   -> GPIO23
+ NSS    -> GPIO5
+ RST    -> GPIO14
+ DIO0   -> GPIO26
+
+ ----------------------------------------------------------------------------
+ MAX30105
+ ----------------------------------------------------------------------------
+ SDA    -> GPIO21
+ SCL    -> GPIO22
+ VIN    -> 3.3V
+ GND    -> GND
+
+ ----------------------------------------------------------------------------
+ GPS (NEO-6M)
+ ----------------------------------------------------------------------------
+ TX     -> GPIO16
+ RX     -> GPIO17
+ VCC    -> 3.3V
+ GND    -> GND
+
+ ----------------------------------------------------------------------------
+ Push Button
+ ----------------------------------------------------------------------------
+ Button -> GPIO32
+ Other  -> GND
+
+ Libraries Required
+ ----------------------------------------------------------------------------
+ LoRa by Sandeep Mistry
+ TinyGPS++
+ SparkFun MAX3010x Sensor Library
+ heartRate.h
+
+ ============================================================================
+*/
