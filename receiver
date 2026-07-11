@@ -1,0 +1,116 @@
+/*
+ ============================================================================
+ File        : receiver.ino
+ Project     : DIY Smart Band using ESP32 + LoRa + Firebase
+ Author      : Sathyanath L
+ College     : Rajalakshmi Engineering College
+
+ Description:
+ ----------------------------------------------------------------------------
+ This program runs on the ESP32 Receiver (Gateway).
+
+ The receiver performs the following tasks:
+   • Receives Smart Band data through LoRa
+   • Connects to Wi-Fi
+   • Uploads received data to Firebase Realtime Database
+   • Displays received packets on the Serial Monitor
+
+ Hardware Used
+ ----------------------------------------------------------------------------
+ • ESP32 DevKit V1
+ • SX1278 LoRa Module (433MHz)
+ • Wi-Fi Network
+ • Firebase Realtime Database
+
+ System Workflow
+ ----------------------------------------------------------------------------
+
+      Smart Band
+          │
+          │
+     Heart Rate Sensor
+          │
+      GPS Module
+          │
+          ▼
+      ESP32 Transmitter
+          │
+      LoRa (433 MHz)
+          │
+          ▼
+      ESP32 Receiver
+          │
+        Wi-Fi
+          │
+          ▼
+ Firebase Realtime Database
+          │
+          ▼
+   Mobile App / Web Dashboard
+
+ Pin Connections
+ ----------------------------------------------------------------------------
+ LoRa Module
+ ----------------------------------------------------------------------------
+ VCC    -> 3.3V
+ GND    -> GND
+ SCK    -> GPIO18
+ MISO   -> GPIO19
+ MOSI   -> GPIO23
+ NSS    -> GPIO5
+ RST    -> GPIO14
+ DIO0   -> GPIO26
+
+ Wi-Fi Credentials
+ ----------------------------------------------------------------------------
+ Replace before uploading:
+
+ #define WIFI_SSID      "YOUR_WIFI_NAME"
+ #define WIFI_PASSWORD  "YOUR_WIFI_PASSWORD"
+
+ Firebase Credentials
+ ----------------------------------------------------------------------------
+ Replace before uploading:
+
+ #define API_KEY        "YOUR_FIREBASE_API_KEY"
+ #define DATABASE_URL   "YOUR_DATABASE_URL"
+
+ #define USER_EMAIL     "YOUR_EMAIL"
+ #define USER_PASSWORD  "YOUR_PASSWORD"
+
+ Firebase Database Structure
+ ----------------------------------------------------------------------------
+
+ SmartBand
+    │
+    └── data
+          │
+          └── latest
+                │
+                └──
+                   HR:91,
+                   Lat:12.971652,
+                   Lon:80.220317,
+                   Sat:7,
+                   Alt:15.4,
+                   SOS:0,
+                   T:658301
+
+ Libraries Required
+ ----------------------------------------------------------------------------
+ • LoRa by Sandeep Mistry
+ • Firebase ESP Client by Mobizt
+ • WiFi (ESP32)
+ • SPI
+
+ Features
+ ----------------------------------------------------------------------------
+ ✔ Receives LoRa Packets
+ ✔ Connects to Wi-Fi
+ ✔ Uploads Data to Firebase
+ ✔ Displays Data on Serial Monitor
+ ✔ Stores Latest Data in Firebase
+ ✔ Suitable as IoT Gateway
+
+ ============================================================================
+*/
